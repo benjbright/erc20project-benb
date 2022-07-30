@@ -1,0 +1,15 @@
+{
+  "name": "erc20project-benb",
+  "version": "1.0.0",
+  "description": "Personal project to build an ERC20 token and a basic Javascript interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Bright",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "hardhat": "^2.10.1"
+  }
+}
