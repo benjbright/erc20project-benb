@@ -37,5 +37,22 @@ describe("Token contract", function () {
     // Transfer tokens from owner to addr1
     await token.transfer(addr1.address, 100000)
     expect(await token.balanceOf(addr1.address)).to.equal(100000)
+
+    // Transfer tokens from addr1 to addr2
+    // Can use the connect method on the ethersJS Contract
+    await token.connect(addr1).transfer(addr2.address, 50000)
+    expect(await token.balanceOf(addr2.address)).to.equal(50000)
+
+    console.log(await token.balanceOf(owner.address))
+    console.log(await token.balanceOf(addr1.address))
+    console.log(await token.balanceOf(addr2.address))
+  })
+
+  it("Should emit Transfer events", async function () {
+    const { token, owner, addr1, addr2 } = await loadFixture(deployTokenFixture)
+
+    await expect(token.transfer(addr1.address, 100000))
+      .to.emit(token, "Transfer")
+      .withArgs(owner.address, addr1.address, 100000)
   })
 })
