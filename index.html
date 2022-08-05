@@ -9,6 +9,22 @@
   </head>
   <body>
     <h1>The ERC20 Token</h1>
+    <h2>
+      Your current account balance is: <span id="accountBalance"></span> ETH
+    </h2>
+
+    <p>
+      The current Goerli test network block number is:
+      <span id="blockNumber"></span>
+    </p>
+    <h2>You have <span id="tokenNumber"></span> tokens.</h2>
+
+    <form action="">
+      <label for="">Issue a token</label>
+      <input type="text" placeholder="Enter your address" id="input" />
+      <button id="btn">Submit</button>
+      <div id="message"></div>
+    </form>
 
     <script src="./index.js" type="module"></script>
   </body>

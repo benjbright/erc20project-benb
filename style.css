@@ -1,3 +1,23 @@
 body {
-  padding: 2em;
+  padding: 1em;
+}
+
+input,
+button {
+  display: block;
+  margin: 1em 0;
+}
+
+input {
+  width: 310px;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+button {
+  background-color: navy;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 1em 2em;
 }
