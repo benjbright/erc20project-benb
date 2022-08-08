@@ -1,6 +1,9 @@
 import { contractAddress, contractAbi } from "./constants.js"
 import { ethers } from "./ethers-5.6.esm.min.js"
 
+// Possible to set this up as a class based App component and re-render on key changes?
+// Re-run a constructor function to force a page re-render?
+
 // Check if there is a Metamask account
 if (window.typeOf !== "undefined") {
   console.log("I see a MetaMask!")
@@ -27,11 +30,13 @@ const balanceEth = Number(ethers.utils.formatEther(balance))
 console.log(balanceEth)
 document.getElementById("accountBalance").innerHTML = balanceEth.toFixed(2)
 
+// Create a new Contract
 const contract = new ethers.Contract(contractAddress, contractAbi, signer)
 const balanceOfOwner = await contract.balanceOf(accounts[0])
 console.log(balanceOfOwner.toString())
 document.getElementById("tokenNumber").innerHTML = balanceOfOwner.toString()
 
+// Add the event listener
 document.getElementById("btn").addEventListener("click", async (event) => {
   event.preventDefault()
   // console.log("Clicked!")
